@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .gallery-container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery-container">
+        <h2>Gallery</h2>
+        {% for file in files %}
+        {% if file.type in [".jpg", ".jpeg", ".jfif", ".pjpeg", ".pjp", ".png", ".gif", ".bmp", ".dib", ".tiff", ".tif", ".webp", ".svg", ".ico", ".heif", ".heic", ".psd"] %}
+                <h3>{{ file.name }}</h3>
+                <img src="data:image/{{ file.type }};base64,{{ file.data }}" alt="{{ file.name }}" style="max-width: 100%;">
+            {% else %}
+                <h3>{{ file.name }}</h3>
+                <a href="data:{{ file.type }};base64,{{ file.data }}" download="{{ file.name }}">Download {{ file.name }}</a>
+            {% endif %}
+        {% endfor %}
+    </div>
+</body>
+</html>

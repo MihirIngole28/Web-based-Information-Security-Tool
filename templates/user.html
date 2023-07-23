@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/user.css') }}">
+  <title>User</title>
+</head>
+<body>
+  <div class="user-container">
+    <h2>Welcome, {{username}}</h2>
+    <a href="{{ url_for('steganography') }}" class="button">Perform Steganography</a>
+    <a href="{{ url_for('encryption') }}" class="button">Perform Encryption</a>
+    <a href="{{ url_for('gallery') }}" class="button">Gallery</a>
+    {% for file in files %}
+      <a href="data:{{ file.type }};base64,{{ file.data }}" download="{{ file.name }}">Download {{ file.name }}</a>
+    {% endfor %}
+  </div>
+</body>
+</html>

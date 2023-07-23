@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/encryption.css') }}">
+  <title>Encryption</title>
+</head>
+<body>
+	<form action="/login/userlogin/user/encryption/encryptioninput" method="post" enctype="multipart/form-data">
+		<label for="messageFile">Upload message file:</label>
+		<input type="file" id="messageFile" name="messageFile" accept=".jpg, .mp4, .ogg, .mpg, .avi, .mov, .wav, .doc, .txt" max-size="10000000"><br><br>
+		<label for="encryptionType">Encryption type (AES, RSA):</label>
+		<input type="text" id="encryptionType" name="encryptionType" pattern="^(AES|RSA)$" required><br><br>
+		<label for="blockMode">Block Mode:</label>
+		<select id="blockMode" name="blockMode">
+			<option value="CBC">CBC</option>
+			<option value="OFB">OFB</option>
+			<option value="CFB">CFB</option>
+		</select><br><br>
+		<label for="senderUsername">Sender's username:</label>
+		<input type="text" id="senderUsername" name="senderUsername"><br><br>
+		<label for="receiverUsername">Receiver's username:</label>
+		<input type="text" id="receiverUsername" name="receiverUsername"><br><br>
+		<input type="submit" value="Encrypt">
+	</form>
+</body>
+</html>

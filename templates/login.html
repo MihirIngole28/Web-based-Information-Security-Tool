@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/login.css') }}">
+  <title>Login</title>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+    {% if failed %}
+      <p class="error-message">Authentication failed. Please try again.</p>
+    {% endif %}
+    <form action="/login/userlogin" method="post">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <button type="submit">Login</button>
+      <p><a href="{{ url_for('guest') }}">Continue as guest</a></p>
+    </form>
+    <p>Don't have an account? <a href="{{ url_for('register') }}">Register</a></p>
+  </div>
+</body>
+</html>

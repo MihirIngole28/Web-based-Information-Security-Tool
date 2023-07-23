@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/encryption_output.css') }}">
+  <title>Encryption Output</title>
+</head>
+<body>
+	<a href="data:{{ public_key_bytes }}" download="receiver_public.key">Download receiver's public key</a>
+	<br><br>
+	<a href="data:{{ encrypted_file_bytes }}" download="encrypted_file">Download Encrypted File</a>
+	<br><br>
+	<a href="data:{{ decrypted_file_bytes }}" download="decrypted_file">Download Decrypted File</a>
+	<br><br>
+	<label for="hash-original">Hash Original: {{hash_original}}</label>
+	<br><br>
+	<label for="hash-decrypted">Hash Decrypted: {{hash_decrypted}}</label>
+	<br><br>
+	<label for="comparison-output">Comparison Output: {{hash_comparision}}</label>
+	<br><br>
+	
+	<script>
+		// function to download the receiver's public key
+		function downloadPublicKey() {
+			// code to download the public key file
+		}
+		
+		// function to download the encrypted file
+		function downloadEncryptedFile() {
+			// code to download the encrypted file
+		}
+		
+		// function to download the decrypted file
+		function downloadDecryptedFile() {
+			// code to download the decrypted file
+		}
+	</script>
+</body>
+</html>
