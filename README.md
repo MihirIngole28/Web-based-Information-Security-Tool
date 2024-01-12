@@ -8,5 +8,3 @@ It leverages RSA for public/private key encryption, integrates SHA-2 for secure 
 The feature set includes options to generate passwords and keys, execute symmetric and asymmetric encryption/decryption, perform steganography on files, securely save keys and documents, and compute and compare file hashes.
 
 It utilizes Azure SQL Database service for reliable data storage and access, handling user credentials, files and their steganography output, and guest basic details. While guests can only view users' steganography work, a table with 100 private keys is available for assigning to new users, ensuring no loss of keys upon restart.
-
-The HTML and CSS pages are crafted using Prompt Engineering on GPT-4, with scripts for generating the webpages provided in the "WebPages Prompt GPT-4.pdf" file. Embrace This for a comprehensive, professional, and reliable cryptographic solution.
